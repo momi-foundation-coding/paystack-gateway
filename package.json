@@ -1,0 +1,37 @@
+{
+  "name": "paystack-gateway",
+  "version": "1.0.0",
+  "description": "Paystack API Gateway wrapper for all API in Paystack",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npm run build && node build/index.js",
+    "build": "rimraf ./build && tsc",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momi-foundation-coding/paystack-gateway.git"
+  },
+  "keywords": [
+    "paystack",
+    "nodejs",
+    "wrapper",
+    "api"
+  ],
+  "author": "Ezrqn Kemboi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/momi-foundation-coding/paystack-gateway/issues"
+  },
+  "homepage": "https://github.com/momi-foundation-coding/paystack-gateway#readme",
+  "type": "module",
+  "engines": {
+    "node": "16.x"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}
