@@ -5,12 +5,13 @@
     "module": "commonjs",
     "rootDir": "src",        
     "resolveJsonModule": true,
-    "allowJs": false,                   
+    "allowJs": true,                   
     "outDir": "build",                     
     "esModuleInterop": true,                    
-    "forceConsistentCasingInFileNames": true,
+    // "forceConsistentCasingInFileNames": true,
     "strict": true,                               
     "noImplicitAny": true,                           
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strictPropertyInitialization": false
   }
 }
