@@ -29,7 +29,7 @@ To start contributing, follow the below guidelines:
    git clone https://github.com/momi-foundation-coding/paystack-gateway.git
    ```
 
-3. Navigate to the directory `mysic-api` .
+3. Navigate to the directory `paystack-gateway` .
 
    ```
    cd paystack-gateway
@@ -73,12 +73,6 @@ Start the app with
 npm start
 ```
 
-You can also start it in watch mode with
-
-```sh
-npm run start
-```
-
 
 ## Push your changes and make a Pull Request
 
@@ -112,7 +106,7 @@ npm run start
 
 ### Follow these steps to report a bug/request a feature
 
-- Head over to [issues](https://github.com/momi-foundation-coding/paystack-gateway.git/issues) tab.
+- Head over to [issues](https://github.com/momi-foundation-coding/paystack-gateway/issues) tab.
 - Click on `New issue` in top right corner.
 - Fill out the details.
 - Click on `Submit new issue`.
