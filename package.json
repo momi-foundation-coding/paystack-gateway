@@ -2,11 +2,9 @@
   "name": "paystack-gateway",
   "version": "1.0.0",
   "description": "Paystack API Gateway wrapper for all API in Paystack",
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "scripts": {
-    "start": "npm run build && node build/index.js",
-    "build": "rimraf ./build && tsc",
-    "test": "mocha"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +22,7 @@
     "url": "https://github.com/momi-foundation-coding/paystack-gateway/issues"
   },
   "homepage": "https://github.com/momi-foundation-coding/paystack-gateway#readme",
-  "type": "commonjs",
+  "type": "module",
   "engines": {
     "node": "16.x"
   },
