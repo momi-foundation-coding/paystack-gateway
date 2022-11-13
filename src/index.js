@@ -8,7 +8,7 @@ const resources = {
   transactions: transactions,
 }
 
-function Paystack(key) {
+export default function Paystack(key) {
   if(!(this instanceof  Paystack)) {
     return new Paystack(key)
   }
@@ -114,4 +114,3 @@ Paystack.prototype = {
   }
 }
 
-export default Paystack
