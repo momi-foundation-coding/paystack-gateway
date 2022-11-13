@@ -55,7 +55,6 @@ Paystack.prototype = {
       // incase of endpoints with no params requirement
       if (func.params) {
         // check args
-        console.log(requiredParams)
         if(func.params.required && func.params.required.length > 0) {
           func.params.required.map(param => {
             if (!(param in data)) {
