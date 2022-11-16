@@ -1,12 +1,8 @@
 import dotenv from 'dotenv'
-import transactions from './endpoints/transactions.js'
 import request from './request.js'
+import resources from './resources.js'
 
 dotenv.config()
-
-const resources = {
-  transactions: transactions,
-}
 
 export default function Paystack(key) {
   if(!(this instanceof  Paystack)) {

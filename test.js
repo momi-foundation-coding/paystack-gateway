@@ -1,4 +1,4 @@
-import Paystack from "./src/index.js"
+import Paystack from "./src/index.js" // assume this is import of the package
 
 const params = {
   email: "ezrqnkemboi@gmail.com",
@@ -6,12 +6,12 @@ const params = {
   currency: "ZAR"
 }
 
-const test = new Paystack(process.env.SECRET_KEY)
+const paystackInstance = new Paystack(process.env.SECRET_KEY)
 
 const testMethods = async () => {
-  const data = await test.transactions.initialize(params)
+  const data = await paystackInstance.transactions.initialize(params)
   console.log({ data })
-  const transactions = await test.transactions.list()
+  const transactions = await paystackInstance.transactions.list()
   console.log({ transactions })
 }
 
