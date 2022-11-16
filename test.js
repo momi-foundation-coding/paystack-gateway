@@ -1,4 +1,7 @@
+import dotenv from 'dotenv'
 import Paystack from "./src/index.js" // assume this is import of the package
+
+dotenv.config()
 
 const params = {
   email: "ezrqnkemboi@gmail.com",

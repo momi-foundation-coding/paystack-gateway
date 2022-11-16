@@ -1,8 +1,5 @@
-import dotenv from 'dotenv'
 import request from './request.js'
 import resources from './resources.js'
-
-dotenv.config()
 
 export default function Paystack(key) {
   if(!(this instanceof  Paystack)) {
@@ -27,6 +24,7 @@ Paystack.prototype = {
   },
   extend: function(func) {
     const hostName = this.endPoint
+    const secretKey = this.key
     return async function() {
       const data = arguments[0] || {};
       const method = ["post", "get", "put", "delete"].includes(func.method)
@@ -91,7 +89,7 @@ Paystack.prototype = {
         path: routeName,
         method: method.toUpperCase(),
         headers: {
-          Authorization: `Bearer ${process.env.SECRET_KEY}`,
+          Authorization: `Bearer ${secretKey}`,
           'Content-Type': 'application/json'
         }
       }
