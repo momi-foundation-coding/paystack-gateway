@@ -26,8 +26,8 @@ Paystack.prototype = {
     const hostName = this.endPoint
     const secretKey = this.key
     return async function() {
-      const data = arguments[0] || {};
-      const method = ["post", "get", "put", "delete"].includes(func.method)
+      const bodyData = arguments[0] || {};
+      const httpMethod = ["post", "get", "put", "delete"].includes(func.method)
         ? func.method
         : (function() {
             throw new Error("Method not Allowed! - Resource declaration error");
@@ -39,10 +39,10 @@ Paystack.prototype = {
       if (argsInRouteName) {
         argsInRouteName.map(arg => {
           arg = arg.replace(/\W/g, "");
-          if (!(arg in data)) {
+          if (!(arg in bodyData)) {
             throw new Error(`Argument '${arg}' is required`);
           } else {
-            routeName = routeName.replace(`:${arg}`, data[`${arg}`]);
+            routeName = routeName.replace(`:${arg}`, bodyData[`${arg}`]);
           }
         });
       }
@@ -51,7 +51,7 @@ Paystack.prototype = {
         // check args
         if(func.params.required && func.params.required.length > 0) {
           func.params.required.map(param => {
-            if (!(param in data)) {
+            if (!(param in bodyData)) {
               throw new Error(`Parameter '${param}' is required`);
             }
           })
@@ -62,17 +62,17 @@ Paystack.prototype = {
       if (func.args) {
         if(func.args.required.length > 0) {
           func.args.required.map(arg => {
-            if (!(arg in data)) {
+            if (!(arg in bodyData)) {
               throw new Error(`Argument '${arg}' is required`);
             } else {
-              qs[`${arg}`] = data[`${arg}`];
+              qs[`${arg}`] = bodyData[`${arg}`];
             }
           })
         }
         if(func.args.optional.length > 0) {
           func.args.optional.map(arg => {
-            if ((arg in data)) {
-              qs[`${arg}`] = data[`${arg}`];
+            if ((arg in bodyData)) {
+              qs[`${arg}`] = bodyData[`${arg}`];
             }
             // we assume wrong send argument 
             // else {
@@ -82,24 +82,8 @@ Paystack.prototype = {
         }
       }
 
-      // Create request
-      const options = {
-        hostname: hostName,
-        port: 443,
-        path: routeName,
-        method: method.toUpperCase(),
-        headers: {
-          Authorization: `Bearer ${secretKey}`,
-          'Content-Type': 'application/json'
-        }
-      }
-
-      if (method == "post" || method == "put") {
-        options.body = JSON.stringify(data);
-      }
-
       try {
-        const res = await request(options)
+        const res = await request({ hostName, routeName, httpMethod, secretKey, bodyData })
         return res
       } catch(error) {
         return error
