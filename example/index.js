@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import Paystack from "./src/index.js" // assume this is import of the package
+import Paystack from "../src/index.js" // assume this is import of the package
 
 dotenv.config()
 
