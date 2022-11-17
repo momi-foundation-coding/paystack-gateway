@@ -1,5 +1,10 @@
 import request from './request.js'
 import resources from './resources.js'
+import {
+  validateAndSendHttpMethod,
+  replacePathAndQueryParams,
+  validateRequiredBodyParameters
+} from './validation.js'
 
 export default function Paystack(key) {
   if(!(this instanceof  Paystack)) {
@@ -27,79 +32,21 @@ Paystack.prototype = {
     const secretKey = this.key
     return async function() {
       const data = arguments[0] || {};
-      const method = ["post", "get", "put", "delete"].includes(func.method)
-        ? func.method
-        : (function() {
-            throw new Error("Method not Allowed! - Resource declaration error");
-          })();
-      let routeName = func.route
-      const qs = {};
-      // Validate required arguments
-      const argsInRouteName = routeName.match(/:[^}]+/g); // check for :
-      if (argsInRouteName) {
-        argsInRouteName.map(arg => {
-          arg = arg.replace(/\W/g, "");
-          if (!(arg in data)) {
-            throw new Error(`Argument '${arg}' is required`);
-          } else {
-            routeName = routeName.replace(`:${arg}`, data[`${arg}`]);
-          }
-        });
+      const httpMethod = validateAndSendHttpMethod(func.method)
+      if(func.bodyParams) {
+        validateRequiredBodyParameters({ bodyParams: func.bodyParams, data: data.bodyParams })
       }
-      // incase of endpoints with no params requirement
-      if (func.params) {
-        // check args
-        if(func.params.required && func.params.required.length > 0) {
-          func.params.required.map(param => {
-            if (!(param in data)) {
-              throw new Error(`Parameter '${param}' is required`);
-            }
-          })
-        }
-      }
-
-      // incase of endpoints with no args requirement
-      if (func.args) {
-        if(func.args.required.length > 0) {
-          func.args.required.map(arg => {
-            if (!(arg in data)) {
-              throw new Error(`Argument '${arg}' is required`);
-            } else {
-              qs[`${arg}`] = data[`${arg}`];
-            }
-          })
-        }
-        if(func.args.optional.length > 0) {
-          func.args.optional.map(arg => {
-            if ((arg in data)) {
-              qs[`${arg}`] = data[`${arg}`];
-            }
-            // we assume wrong send argument 
-            // else {
-            //   throw new Error(`Argument '${arg}' is not a params`);
-            // }
-          })
-        }
-      }
-
-      // Create request
-      const options = {
-        hostname: hostName,
-        port: 443,
-        path: routeName,
-        method: method.toUpperCase(),
-        headers: {
-          Authorization: `Bearer ${secretKey}`,
-          'Content-Type': 'application/json'
-        }
-      }
-
-      if (method == "post" || method == "put") {
-        options.body = JSON.stringify(data);
-      }
+      const routeName = replacePathAndQueryParams({
+        routeName: func.route,
+        queryParamsData: data.queryParams,
+        pathParamsData: data.pathParams,
+        queryParams: func.queryParams
+      })
 
       try {
-        const res = await request(options)
+        const res = await request({
+          hostName, routeName, httpMethod, secretKey, bodyParamsData: data.bodyParams
+        })
         return res
       } catch(error) {
         return error
@@ -107,4 +54,3 @@ Paystack.prototype = {
     };
   }
 }
-
