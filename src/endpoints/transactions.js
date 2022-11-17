@@ -4,7 +4,7 @@ const transactions = {
   initialize: {
     method: "post",
     route: route + "/initialize",
-    params: {
+    bodyParams: {
       required: [ "amount", "email"],
       optional: [
         "currency", "reference", 'callback_url', 'plan', 
@@ -16,7 +16,7 @@ const transactions = {
   verify: {
     method: "get",
     route: route + "/verify/:reference",
-    args: {
+    queryParams: {
       required: ["reference"],
       optional: []
     }
@@ -24,8 +24,8 @@ const transactions = {
   list: {
     method: "get",
     route: route,
-    args: {
-      required: [],
+    queryParams: {
+      required: ["perPage"],
       optional: []
     }
   },

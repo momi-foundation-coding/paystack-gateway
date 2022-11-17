@@ -1,7 +1,7 @@
 import https from 'node:https'
 
 const request = (
-  { hostName, routeName, httpMethod, secretKey, bodyData }
+  { hostName, routeName, httpMethod, secretKey, bodyParamsData }
 ) => {
   let options = {
     hostname: hostName,
@@ -16,7 +16,7 @@ const request = (
 
   if (httpMethod.toLowerCase() === "post" || httpMethod.toLowerCase() === "put") {
     // hostName, routeName, httpMethod, secretKey
-    options.body = JSON.stringify(bodyData);
+    options.body = JSON.stringify(bodyParamsData);
   }
 
   return new Promise((resolve, reject) => {

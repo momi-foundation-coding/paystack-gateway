@@ -3,18 +3,21 @@ import Paystack from "./src/index.js" // assume this is import of the package
 
 dotenv.config()
 
-const params = {
-  email: "ezrqnkemboi@gmail.com",
-  amount: 20000,
-  currency: "ZAR"
-}
-
 const paystackInstance = new Paystack(process.env.SECRET_KEY)
 
 const testMethods = async () => {
-  const data = await paystackInstance.transactions.initialize(params)
+  // can pass bodyParams, pathParams, queryParams
+  const bodyParams = {
+    email: "ezrqnkemboi@gmail.com",
+    amount: 20000,
+    currency: "ZAR"
+  }
+  const data = await paystackInstance.transactions.initialize({ bodyParams: bodyParams })
   console.log({ data })
-  const transactions = await paystackInstance.transactions.list()
+  const queryParams = {
+    perPage: 2
+  }
+  const transactions = await paystackInstance.transactions.list({ queryParams: queryParams })
   console.log({ transactions })
 }
 
