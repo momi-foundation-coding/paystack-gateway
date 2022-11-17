@@ -1,5 +1,5 @@
 {
-  "name": "paystack-gateway",
+  "name": "paystack-gateway-test",
   "version": "0.1.0",
   "description": "Paystack API Gateway wrapper for all API in Paystack",
   "main": "src/index.js",
@@ -25,5 +25,10 @@
   "type": "module",
   "engines": {
     "node": "16.x"
-  }
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "src/"
+  ]
 }
