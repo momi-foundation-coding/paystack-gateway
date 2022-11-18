@@ -3,7 +3,7 @@ import transactions from './endpoints/transactions.js'
 import customers from './endpoints/customers.js'
 import transactionSplits from './endpoints/transaction_splits.js'
 import products from './endpoints/products.js'
-import subscriptions from './endpoints/subscriptions'
+import subscriptions from './endpoints/subscriptions.js'
 import plans from './endpoints/plans.js'
 import invoices from './endpoints/invoices.js'
 
