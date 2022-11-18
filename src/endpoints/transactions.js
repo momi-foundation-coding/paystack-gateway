@@ -29,6 +29,10 @@ const transactions = {
       optional: []
     }
   },
+  fetchTransaction: {
+    method: "get",
+    route: route + "/:id"
+  }
 }
 
 export default transactions 
