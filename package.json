@@ -1,6 +1,6 @@
 {
-  "name": "paystack-gateway-test",
-  "version": "0.1.0",
+  "name": "paystack-gateway",
+  "version": "0.1.1",
   "description": "Paystack API Gateway wrapper for all API in Paystack",
   "main": "src/index.js",
   "scripts": {
