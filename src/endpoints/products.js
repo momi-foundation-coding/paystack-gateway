@@ -5,38 +5,34 @@ const products = {
     method: "post",
     route: route,
     bodyParams: {
-      required: [ "name", "description","price","currency"],
-      optional: [
-        "unlimited", "quantity"
-      ]
-    }
+      required: ["name", "description", "price", "currency"],
+      optional: ["unlimited", "quantity"],
+    },
   },
   listProduct: {
     method: "get",
     route: route,
     queryParams: {
-      required: ["perPage","page"],
-      optional: ["from","to"]
-    }
+      required: ["perPage", "page"],
+      optional: ["from", "to"],
+    },
   },
   fetchProduct: {
     method: "get",
     route: route,
     queryParams: {
       required: ["id"],
-      optional: []
-    }
+      optional: [],
+    },
   },
   updateProduct: {
     method: "put",
-    route: route + "/{id}",
+    route: route + "/:id",
     queryParams: {
-        required: [ "name", "description","price","currency"],
-        optional: [
-          "unlimited", "quantity"
-        ]
-    }
+      required: ["name", "description", "price", "currency"],
+      optional: ["unlimited", "quantity"],
+    },
   },
-}
+};
 
-export default products
+export default products;

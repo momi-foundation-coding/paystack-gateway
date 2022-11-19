@@ -4,7 +4,7 @@ const verification = {
   resolveAccountNumber: {
     method: "get",
     route: route + "/resolve",
-    QueryParam: {
+    queryParams: {
       required: ["account_number", "bank_code"],
       optional: [],
     },
@@ -12,7 +12,7 @@ const verification = {
   validateAccount: {
     method: "post",
     route: route + "/validate",
-    BodyParam: {
+    bodyParams: {
       required: [
         "account_name",
         "account_number",
@@ -27,7 +27,7 @@ const verification = {
   resolveCardBIN: {
     method: "get",
     route: route + "/bin/:bin",
-    PathParam: {
+    pathParams: {
       required: ["bin"],
       optional: [""],
     },

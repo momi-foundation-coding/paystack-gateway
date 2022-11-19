@@ -1,5 +1,5 @@
 const miscellaneous = {
-  ListBanks: {
+  listBanks: {
     method: "get",
     route: "/bank",
     QueryParam: {
@@ -15,13 +15,13 @@ const miscellaneous = {
       ],
     },
   },
-  ListCountries: {
+  listCountries: {
     method: "get",
-    route: "country",
+    route: "/country",
   },
-  ListStates: {
+  listStates: {
     method: "get",
-    route: "/address_verification" + "/states",
+    route: "/address_verification/states",
     QueryParam: {
       required: ["country"],
       optional: [],

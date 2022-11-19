@@ -23,20 +23,20 @@ const plans = {
       optional: ["status", "interval", "amount"],
     },
   },
-  FetchPlans: {
+  fetchPlans: {
     method: "get",
     route: route + ":id_or_code",
     bodyParams: {
       required: ["id_or_code"],
     },
   },
-  UpdatePlan: {
+  updatePlan: {
     method: "put",
     route: route + ":id_or_code",
-    PathParam: {
+    PathParams: {
       required: ["id_or_code"],
     },
-    BodyParam: {
+    bodyParams: {
       required: ["name", "amount", "interval"],
       optional: [
         "description",

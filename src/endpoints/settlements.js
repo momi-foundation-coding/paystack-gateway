@@ -5,20 +5,18 @@ const settlements = {
     method: "get",
     route: route,
     bodyParams: {
-      required: [ "perPage","page"],
-      optional: [
-        "from", "to"
-      ]
-    }
+      required: ["perPage", "page"],
+      optional: ["from", "to"],
+    },
   },
   fetchSettlementTransactions: {
     method: "get",
-    route: route + "/id:/transactions",
+    route: route + "/:id/transactions",
     queryParams: {
-      required: ["perPage","page"],
-      optional: ["from","to"]
-    }
+      required: ["perPage", "page"],
+      optional: ["from", "to"],
+    },
   },
-}
+};
 
-export default settlements
+export default settlements;

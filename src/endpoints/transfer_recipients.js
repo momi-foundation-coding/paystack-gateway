@@ -5,53 +5,50 @@ const transferRecipients = {
     method: "post",
     route: route,
     bodyParams: {
-      required: [ "type","name", "account_number","bank_code"],
-      optional: [
-        "description", "currency", "authorization_code",
-        "metadata"
-      ]
-    }
+      required: ["type", "name", "account_number", "bank_code"],
+      optional: ["description", "currency", "authorization_code", "metadata"],
+    },
   },
   bulkCreateTransferRecipient: {
     method: "post",
     route: route + "/bulk",
     queryParams: {
-      required: ["type","name","bank_code"],
-      optional: []
-    }
+      required: ["type", "name", "bank_code"],
+      optional: [],
+    },
   },
   listTransferRecipient: {
     method: "get",
     route: route,
     queryParams: {
-      required: ["perPage","page"],
-      optional: ["from","to"]
-    }
+      required: ["perPage", "page"],
+      optional: ["from", "to"],
+    },
   },
   fetchTransferRecipient: {
     method: "get",
     route: route + "/:id_or_code",
     queryParams: {
-        required: [ "id_or_code"],
-        optional: []
-    }
+      required: ["id_or_code"],
+      optional: [],
+    },
   },
   updateTransferRecipient: {
     method: "put",
     route: route + "/:id_or_code",
     queryParams: {
-        required: [ "name"],
-        optional: ["email"]
-    }
+      required: ["name"],
+      optional: ["email"],
+    },
   },
   deleteTransferRecipient: {
     method: "delete",
     route: route + "/:id_or_code",
     queryParams: {
-        required: [],
-        optional: []
-    }
+      required: [],
+      optional: [],
+    },
   },
-}
+};
 
-export default transferRecipients
+export default transferRecipients;

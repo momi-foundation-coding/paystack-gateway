@@ -1,7 +1,7 @@
 const route = "/dedicated_account";
 
 const dedicatedVirtualAccounts = {
-  CreateDedicatedVirtual: {
+  createDedicatedVirtual: {
     method: "post",
     route: route,
     BodyParam: {
@@ -16,7 +16,7 @@ const dedicatedVirtualAccounts = {
       ],
     },
   },
-  AssignDedicatedVirtualAccount: {
+  assignDedicatedVirtualAccount: {
     method: "post",
     route: route + "/assign",
     BodyParam: {
@@ -37,7 +37,7 @@ const dedicatedVirtualAccounts = {
       ],
     },
   },
-  ListDedicatedAccounts: {
+  listDedicatedAccounts: {
     method: "get",
     route: route,
     QueryParam: {
@@ -45,7 +45,7 @@ const dedicatedVirtualAccounts = {
       optional: ["provider_slug", "bank_id", "customer"],
     },
   },
-  FetchDedicatedAccount: {
+  fetchDedicatedAccount: {
     method: "get",
     route: route + "/:dedicated_account_id",
     PathParam: {
@@ -53,7 +53,7 @@ const dedicatedVirtualAccounts = {
       optional: [],
     },
   },
-  RequeryDedicatedAccount: {
+  requeryDedicatedAccount: {
     method: "get",
     route: route,
     QueryParam: {
@@ -61,7 +61,7 @@ const dedicatedVirtualAccounts = {
       optional: ["date"],
     },
   },
-  DeactivateDedicatedAccount: {
+  deactivateDedicatedAccount: {
     method: "del",
     route: route + ":dedicated_account_id",
     PathParam: {
@@ -69,7 +69,7 @@ const dedicatedVirtualAccounts = {
       optional: [],
     },
   },
-  SplitDedicatedAccountTransaction: {
+  splitDedicatedAccountTransaction: {
     method: "post",
     route: route + "/split",
     BodyParam: {
@@ -77,7 +77,7 @@ const dedicatedVirtualAccounts = {
       optional: ["subaccount", "split_code", "preferred_bank"],
     },
   },
-  RemoveSplitFromDedicatedAccount: {
+  removeSplitFromDedicatedAccount: {
     method: "del",
     route: route + "/split",
     BodyParam: {
@@ -85,10 +85,10 @@ const dedicatedVirtualAccounts = {
       optional: [],
     },
   },
-  FetchBankProviders: {
+  fetchBankProviders: {
     method: "get",
     route: route + "/available_providers",
   },
 };
 
-export default dedicatedVirtualAccounts
+export default dedicatedVirtualAccounts;
