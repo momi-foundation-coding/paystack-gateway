@@ -6,6 +6,7 @@ import products from './endpoints/products.js'
 import subscriptions from './endpoints/subscriptions.js'
 import plans from './endpoints/plans.js'
 import invoices from './endpoints/invoices.js'
+import settlements from './endpoints/settlements.js'
 import transfersControl from './endpoints/transfers_control.js'
 import trasferrecipients from './endpoints/transferRecipients.js'
 import transfers from './endpoints/tranfers.js'
@@ -19,6 +20,7 @@ const resources = {
   subscriptions,
   plans,
   invoices,
+  settlements,
   transfersControl,
   trasferrecipients,
   transfers
