@@ -1,6 +1,6 @@
 const route = "/bulkcharge";
 
-const bulkcharge = {
+const bulkCharge = {
   InitiateBulkCharge: {
     method: "post",
     route: route,
@@ -51,4 +51,4 @@ const bulkcharge = {
   },
 };
 
-export default bulkcharge;
+export default bulkCharge;

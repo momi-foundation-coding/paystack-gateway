@@ -1,6 +1,6 @@
 const route = "/dedicated_account";
 
-const dedicated_account = {
+const dedicatedVirtualAccounts = {
   CreateDedicatedVirtual: {
     method: "post",
     route: route,
@@ -90,3 +90,5 @@ const dedicated_account = {
     route: route + "/available_providers",
   },
 };
+
+export default dedicatedVirtualAccounts
