@@ -1,29 +1,29 @@
-const route = '/apple-pay'
+const route = "/apple-pay";
 
 const applePay = {
-  RegisterDomain: {
-    method: 'post',
-    route: route + '/domain',
+  registerDomain: {
+    method: "post",
+    route: route + "/domain",
     BodyParam: {
-      required: ['domainName'],
+      required: ["domainName"],
       optional: [],
     },
   },
-  ListDomains: {
-    method: 'get',
-    route: route + '/domain',
+  listDomains: {
+    method: "get",
+    route: route + "/domain",
     BodyParam: {
       required: [],
       optional: [],
     },
   },
-  UnregisterDomain: {
-    method: 'del',
-    route: route + '/domain',
+  unregisterDomain: {
+    method: "del",
+    route: route + "/domain",
     BodyParam: {
-      required: ['domainName'],
+      required: ["domainName"],
       optional: [],
     },
   },
-}
-export default applePay
+};
+export default applePay;
