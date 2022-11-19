@@ -14,6 +14,7 @@ import bulkcharge from "./endpoints/bulkcharge.js";
 import controlPanel from "./endpoints/control_panel.js";
 import verification from "./endpoints/verification.js";
 import miscellaneous from "./endpoints/miscellaneous.js";
+import applePay from "./endpoints/apple_pay.js";
 
 // define all existing resources here
 const resources = {
@@ -32,6 +33,7 @@ const resources = {
   controlPanel,
   verification,
   miscellaneous,
+  applePay,
 };
 
 export default resources;
