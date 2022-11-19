@@ -10,6 +10,7 @@ import settlements from "./endpoints/settlements.js";
 import transfersControl from "./endpoints/transfers_control.js";
 import trasferrecipients from "./endpoints/transferRecipients.js";
 import transfers from "./endpoints/tranfers.js";
+import bulkcharge from "./endpoints/bulkcharge.js";
 
 // define all existing resources here
 const resources = {
@@ -24,6 +25,7 @@ const resources = {
   transfersControl,
   trasferrecipients,
   transfers,
+  bulkcharge,
 };
 
 export default resources;
