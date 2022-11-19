@@ -9,7 +9,7 @@ import invoices from "./endpoints/invoices.js";
 import settlements from "./endpoints/settlements.js";
 import transfersControl from "./endpoints/transfers_control.js";
 import trasferrecipients from "./endpoints/transferRecipients.js";
-import transfers from "./endpoints/tranfers.js";
+import transfers from "./endpoints/transfers.js";
 import bulkcharge from "./endpoints/bulkcharge.js";
 
 // define all existing resources here
