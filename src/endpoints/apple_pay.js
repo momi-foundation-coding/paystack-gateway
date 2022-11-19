@@ -18,7 +18,7 @@ const applePay = {
     },
   },
   unregisterDomain: {
-    method: "del",
+    method: "delete",
     route: route + "/domain",
     BodyParam: {
       required: ["domainName"],
