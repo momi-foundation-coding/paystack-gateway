@@ -11,6 +11,7 @@ import transfersControl from "./endpoints/transfers_control.js";
 import trasferrecipients from "./endpoints/transferRecipients.js";
 import transfers from "./endpoints/transfers.js";
 import bulkcharge from "./endpoints/bulkcharge.js";
+import controlPanel from "./endpoints/control_panel.js";
 
 // define all existing resources here
 const resources = {
@@ -26,6 +27,7 @@ const resources = {
   trasferrecipients,
   transfers,
   bulkcharge,
+  controlPanel,
 };
 
 export default resources;
