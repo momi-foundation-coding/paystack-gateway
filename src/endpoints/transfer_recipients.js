@@ -1,6 +1,6 @@
 const route = "/transferrecipient";
 
-const trasferrecipients = {
+const transferRecipients = {
   createTransferRecipient: {
     method: "post",
     route: route,
@@ -54,4 +54,4 @@ const trasferrecipients = {
   },
 }
 
-export default trasferrecipients
+export default transferRecipients
