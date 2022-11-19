@@ -18,3 +18,5 @@ const controlPanel = {
     },
   },
 };
+
+export default controlPanel;
