@@ -1,6 +1,6 @@
 const route = '/apple-pay'
 
-const apple_pay = {
+const applePay = {
   RegisterDomain: {
     method: 'post',
     route: route + '/domain',
@@ -26,4 +26,4 @@ const apple_pay = {
     },
   },
 }
-export default apple_pay
+export default applePay
