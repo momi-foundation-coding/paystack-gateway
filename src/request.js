@@ -32,7 +32,7 @@ const request = (
       reject(error);
     })
 
-    if(options.method !== 'GET') {
+    if(options.method !== 'GET' && options.body !== undefined) {
       req.write(options.body)
     }
     req.end()
