@@ -16,7 +16,14 @@ const plans = {
       required: ["perPage", "page"],
       optional: ["status", "interval", "amount",]
     }
-
+  },
+  FetchPlans: {
+    method: "get",
+    route: route + ":id_or_code",
+    bodyParams: {
+      require: ["id_or_code"]
+    }
+  
   }
 
 }
