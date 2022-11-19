@@ -6,15 +6,9 @@ import products from "./endpoints/products.js";
 import subscriptions from "./endpoints/subscriptions.js";
 import plans from "./endpoints/plans.js";
 import invoices from "./endpoints/invoices.js";
-import settlements from "./endpoints/settlements.js";
 import transfersControl from "./endpoints/transfers_control.js";
 import trasferrecipients from "./endpoints/transferRecipients.js";
-import transfers from "./endpoints/transfers.js";
-import bulkcharge from "./endpoints/bulkcharge.js";
-import controlPanel from "./endpoints/control_panel.js";
-import verification from "./endpoints/verification.js";
-import miscellaneous from "./endpoints/miscellaneous.js";
-
+import apple_pay from "./endpoints/apple_pay.js";
 // define all existing resources here
 const resources = {
   transactions,
@@ -24,14 +18,9 @@ const resources = {
   subscriptions,
   plans,
   invoices,
-  settlements,
+  apple_pay,
   transfersControl,
   trasferrecipients,
-  transfers,
-  bulkcharge,
-  controlPanel,
-  verification,
-  miscellaneous,
 };
 
 export default resources;
