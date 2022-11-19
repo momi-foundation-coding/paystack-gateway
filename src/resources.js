@@ -15,10 +15,12 @@ import controlPanel from "./endpoints/control_panel.js";
 import verification from "./endpoints/verification.js";
 import miscellaneous from "./endpoints/miscellaneous.js";
 import applePay from "./endpoints/apple_pay.js";
+import charge from "./endpoints/charge.js";
 
 // define all existing resources here
 const resources = {
   transactions,
+  charge,
   customers,
   transactionSplits,
   products,
