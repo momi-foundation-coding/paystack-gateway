@@ -6,6 +6,7 @@ import products from './endpoints/products.js'
 import subscriptions from './endpoints/subscriptions.js'
 import plans from './endpoints/plans.js'
 import invoices from './endpoints/invoices.js'
+import settlements from './endpoints/settlements.js'
 
 // define all existing resources here
 const resources = {
@@ -16,6 +17,7 @@ const resources = {
   subscriptions,
   plans,
   invoices,
+  settlements,
 }
 
 export default resources
