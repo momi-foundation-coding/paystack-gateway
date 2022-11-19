@@ -16,9 +16,9 @@ import verification from "./endpoints/verification.js";
 import miscellaneous from "./endpoints/miscellaneous.js";
 import applePay from "./endpoints/apple_pay.js";
 import charge from "./endpoints/charge.js";
-import dedicatedVirtualAccounts from './endpoints/dedicated_virtual_accounts.js'
-import disputes from './endpoints/disputes.js'
-import paymentPages from './endpoints/payment_pages.js'
+import dedicatedVirtualAccounts from "./endpoints/dedicated_virtual_accounts.js";
+import disputes from "./endpoints/disputes.js";
+import paymentPages from "./endpoints/payment_pages.js";
 
 // define all existing resources here
 const resources = {
@@ -41,7 +41,7 @@ const resources = {
   applePay,
   dedicatedVirtualAccounts,
   disputes,
-  paymentPages
+  paymentPages,
 };
 
 export default resources;
