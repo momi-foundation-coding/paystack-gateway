@@ -1,10 +1,11 @@
-const root = "/subaccounts";
+import resources from "src/resources.js";
+const root = "/subAccounts";
 
-const subaccounts = {
+const subAccounts = {
   createSubaccount: {
     route: route,
     method: "post",
-    bodyParams: {
+    BodyParams: {
       required: [
         "business_name",
         "settlement_bank",
@@ -22,7 +23,7 @@ const subaccounts = {
     listSubAccounts: {
       route: route,
       method: "put",
-      queryParams: {
+      QueryParams: {
         required: ["perPage", "page"],
         optional: ["from", "to"],
       },
@@ -30,7 +31,7 @@ const subaccounts = {
     fetchSubAccount: {
       route: route + "/id",
       method: "get",
-      pathParams: {
+      PathParams: {
         required: ["id"],
         optional: [],
       },
@@ -38,7 +39,7 @@ const subaccounts = {
     updateSubAccount: {
       route: route + "/id",
       method: "put",
-      bodyParams: {
+      BodyParams: {
         required: ["business_name", "settlement_bank"],
         optional: [
           "account_number",
@@ -56,4 +57,4 @@ const subaccounts = {
   },
 };
 
-export default subaccounts;
+export default subAccounts;
