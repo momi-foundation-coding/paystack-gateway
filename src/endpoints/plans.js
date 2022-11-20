@@ -33,7 +33,7 @@ const plans = {
   updatePlan: {
     method: "put",
     route: route + ":id_or_code",
-    PathParams: {
+    pathParamss: {
       required: ["id_or_code"],
     },
     bodyParams: {

@@ -4,7 +4,7 @@ const bulkCharge = {
   initiateBulkCharge: {
     method: "post",
     route: route,
-    BodyParam: {
+    bodyParams: {
       required: ["(no name)"],
       optional: [],
     },
@@ -12,7 +12,7 @@ const bulkCharge = {
   listBulkChargeBatches: {
     method: "get",
     route: route,
-    QueryParam: {
+    queryParams: {
       required: ["perPage", "page"],
       optional: ["from", "to"],
     },
@@ -20,7 +20,7 @@ const bulkCharge = {
   fetchBulkChargeBatch: {
     method: "get",
     route: route + "/:id_or_code",
-    PathParam: {
+    pathParams: {
       required: ["id_or_code"],
       optional: [],
     },
@@ -28,7 +28,7 @@ const bulkCharge = {
   fetchChargesinaBatch: {
     method: "get",
     route: route + "/:id_or_code/charges",
-    QueryParam: {
+    queryParams: {
       required: ["status", "perPage", "page"],
       optional: ["from", "to"],
     },
@@ -36,7 +36,7 @@ const bulkCharge = {
   pauseBulkChargeBatch: {
     method: "get",
     route: route + "/pause/:batch_code",
-    PathParam: {
+    pathParams: {
       required: ["batch_code"],
       oiptional: [],
     },
@@ -44,7 +44,7 @@ const bulkCharge = {
   resumeBulkChargeBatch: {
     method: "get",
     route: route + "/resume/:batch_code",
-    Pathparam: {
+    pathParams: {
       required: ["batch_code"],
       optional: [],
     },

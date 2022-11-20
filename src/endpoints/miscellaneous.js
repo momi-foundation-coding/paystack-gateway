@@ -2,7 +2,7 @@ const miscellaneous = {
   listBanks: {
     method: "get",
     route: "/bank",
-    QueryParam: {
+    queryParams: {
       required: ["country", "use_cursor", "perPage"],
       optional: [
         "pay_with_bank_transfer",
@@ -22,7 +22,7 @@ const miscellaneous = {
   listStates: {
     method: "get",
     route: "/address_verification/states",
-    QueryParam: {
+    queryParams: {
       required: ["country"],
       optional: [],
     },
