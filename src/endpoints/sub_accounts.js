@@ -1,5 +1,4 @@
-import resources from "src/resources.js";
-const root = "/subAccounts";
+const roote = "/subAccounts";
 
 const subAccounts = {
   createSubaccount: {

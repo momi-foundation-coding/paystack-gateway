@@ -19,9 +19,11 @@ import charge from "./endpoints/charge.js";
 import dedicatedVirtualAccounts from "./endpoints/dedicated_virtual_accounts.js";
 import disputes from "./endpoints/disputes.js";
 import paymentPages from "./endpoints/payment_pages.js";
+import subAccounts from "./endpoints/sub_accounts.js";
 
 // define all existing resources here
 const resources = {
+  subAccounts,
   transactions,
   charge,
   customers,
