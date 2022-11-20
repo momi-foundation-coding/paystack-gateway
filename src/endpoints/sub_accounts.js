@@ -1,7 +1,7 @@
-const route = "/subAccounts";
+const route = "/subaccounts";
 
 const subAccounts = {
-  createSubaccount: {
+  createSubAccount: {
     route: route,
     method: "post",
     bodyParams: {
@@ -21,7 +21,7 @@ const subAccounts = {
     },
     listSubAccounts: {
       route: route,
-      method: "put",
+      method: "get",
       queryParams: {
         required: ["perPage", "page"],
         optional: ["from", "to"],
