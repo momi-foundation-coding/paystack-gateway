@@ -4,7 +4,7 @@ const subAccounts = {
   createSubaccount: {
     route: route,
     method: "post",
-    BodyParams: {
+    bodyParams: {
       required: [
         "business_name",
         "settlement_bank",
@@ -14,7 +14,7 @@ const subAccounts = {
       ],
       optional: [
         "primary_contact_email",
-        "primary_contant_name",
+        "primary_contact_name",
         "primary_contact_phone",
         "metadata",
       ],
@@ -22,23 +22,23 @@ const subAccounts = {
     listSubAccounts: {
       route: route,
       method: "put",
-      QueryParams: {
+      queryParams: {
         required: ["perPage", "page"],
         optional: ["from", "to"],
       },
     },
     fetchSubAccount: {
-      route: route + "/id",
+      route: route + "/:id_or_code",
       method: "get",
-      PathParams: {
-        required: ["id"],
+      pathParams: {
+        required: ["id_or_code"],
         optional: [],
       },
     },
     updateSubAccount: {
       route: route + "/id",
       method: "put",
-      BodyParams: {
+      bodyParams: {
         required: ["business_name", "settlement_bank"],
         optional: [
           "account_number",
