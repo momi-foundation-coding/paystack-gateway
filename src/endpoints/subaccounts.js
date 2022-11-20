@@ -55,3 +55,5 @@ const subaccounts = {
     },
   },
 };
+
+export default subaccounts;
