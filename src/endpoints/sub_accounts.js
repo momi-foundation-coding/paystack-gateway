@@ -1,4 +1,4 @@
-const roote = "/subAccounts";
+const route = "/subAccounts";
 
 const subAccounts = {
   createSubaccount: {
