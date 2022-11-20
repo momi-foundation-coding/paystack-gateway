@@ -86,7 +86,7 @@ const transactions = {
       optional: ["from", "to"],
     },
   },
-  eportTransactions: {
+  exportTransactions: {
     method: "get",
     route: route + "/export",
     queryParams: {
