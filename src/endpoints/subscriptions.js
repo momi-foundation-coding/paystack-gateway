@@ -7,6 +7,7 @@ const subscriptions = {
     BodyParam: {
       required: ["customer", "plan", "authorization"],
       optional: ["start_date"]
+      
     }
   },
   listSubscriptions:{
