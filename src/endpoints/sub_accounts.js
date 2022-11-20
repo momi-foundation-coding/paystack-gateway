@@ -36,7 +36,7 @@ const subAccounts = {
       },
     },
     updateSubAccount: {
-      route: route + "/id",
+      route: route + "/:id_or_code",
       method: "put",
       bodyParams: {
         required: ["business_name", "settlement_bank"],
@@ -52,6 +52,9 @@ const subAccounts = {
           "metadata",
         ],
       },
+      pathParams: {
+        required: ["id_or_code"]
+      }
     },
   },
 };
