@@ -4,7 +4,7 @@ const dedicatedVirtualAccounts = {
   createDedicatedVirtual: {
     method: "post",
     route: route,
-    BodyParam: {
+    bodyParams: {
       required: ["customer"],
       optional: [
         "preferred_bank",
@@ -19,7 +19,7 @@ const dedicatedVirtualAccounts = {
   assignDedicatedVirtualAccount: {
     method: "post",
     route: route + "/assign",
-    BodyParam: {
+    bodyParams: {
       required: [
         "email",
         "first_name",
@@ -40,7 +40,7 @@ const dedicatedVirtualAccounts = {
   listDedicatedAccounts: {
     method: "get",
     route: route,
-    QueryParam: {
+    queryParams: {
       required: ["active", "currency"],
       optional: ["provider_slug", "bank_id", "customer"],
     },
@@ -48,7 +48,7 @@ const dedicatedVirtualAccounts = {
   fetchDedicatedAccount: {
     method: "get",
     route: route + "/:dedicated_account_id",
-    PathParam: {
+    pathParams: {
       required: ["dedicated_account_id"],
       optional: [],
     },
@@ -56,7 +56,7 @@ const dedicatedVirtualAccounts = {
   requeryDedicatedAccount: {
     method: "get",
     route: route,
-    QueryParam: {
+    queryParams: {
       required: ["account_number", "provider_slug"],
       optional: ["date"],
     },
@@ -64,7 +64,7 @@ const dedicatedVirtualAccounts = {
   deactivateDedicatedAccount: {
     method: "del",
     route: route + ":dedicated_account_id",
-    PathParam: {
+    pathParams: {
       required: ["dedicated_account_id"],
       optional: [],
     },
@@ -72,7 +72,7 @@ const dedicatedVirtualAccounts = {
   splitDedicatedAccountTransaction: {
     method: "post",
     route: route + "/split",
-    BodyParam: {
+    bodyParams: {
       required: ["customer"],
       optional: ["subaccount", "split_code", "preferred_bank"],
     },
@@ -80,7 +80,7 @@ const dedicatedVirtualAccounts = {
   removeSplitFromDedicatedAccount: {
     method: "del",
     route: route + "/split",
-    BodyParam: {
+    bodyParams: {
       required: ["account_number"],
       optional: [],
     },

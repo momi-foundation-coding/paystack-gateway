@@ -4,7 +4,7 @@ const charge = {
   createCharge: {
     method: "post",
     route: route,
-    BodyParam: {
+    bodyParams: {
       required: ["email", "amount"],
       optional: [
         "bank",
@@ -21,7 +21,7 @@ const charge = {
   submitPIN: {
     method: "post",
     route: route + "/submit-pin",
-    BodyParam: {
+    bodyParams: {
       required: ["pin", "reference"],
       optional: [],
     },
@@ -29,7 +29,7 @@ const charge = {
   submitOTP: {
     method: "post",
     route: route + "/submit-otp",
-    BodyParam: {
+    bodyParams: {
       required: ["otp", "reference"],
       optional: [],
     },
@@ -37,7 +37,7 @@ const charge = {
   submitPhone: {
     method: "post",
     route: route + "submit-phone",
-    BodyParam: {
+    bodyParams: {
       required: ["phone", "reference"],
       optional: [],
     },
@@ -45,7 +45,7 @@ const charge = {
   submitBirthday: {
     method: "post",
     route: route + "/submit_birthday",
-    BodyParam: {
+    bodyParams: {
       required: ["birthday", "reference"],
       optional: [],
     },
@@ -53,7 +53,7 @@ const charge = {
   submitAddress: {
     method: "post",
     route: route + "/submit_address",
-    BodyParam: {
+    bodyParams: {
       required: ["address", "reference", "city", "state", "zipcode"],
       optional: [],
     },
@@ -61,7 +61,7 @@ const charge = {
   checkPendingCharge: {
     method: "get",
     route: route + "/:reference",
-    PathParam: {
+    pathParams: {
       required: ["reference"],
     },
   },

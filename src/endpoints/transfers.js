@@ -4,7 +4,7 @@ const transfers = {
   initiateTransfer: {
     method: "post",
     route: route,
-    BodyParam: {
+    bodyParams: {
       required: ["source", "amount", "recipient"],
       optional: ["reason", "currency", "reference"],
     },
@@ -12,7 +12,7 @@ const transfers = {
   finalizeTransfer: {
     method: "post",
     route: route + "/finalize_transfer",
-    BodyParam: {
+    bodyParams: {
       required: ["transfer_code", "otp"],
       optional: [],
     },
@@ -20,7 +20,7 @@ const transfers = {
   initiateBulkTransfer: {
     method: "post",
     route: route + "/bulk",
-    BodyParam: {
+    bodyParams: {
       required: ["source", "transfers"],
       optional: [],
     },
@@ -29,7 +29,7 @@ const transfers = {
   listTransfers: {
     method: "get",
     route: route,
-    QueryParam: {
+    queryParams: {
       required: ["perPage", "page", "customer"],
       optional: ["from", "to"],
     },
@@ -37,7 +37,7 @@ const transfers = {
   fetchTransfer: {
     method: "get",
     route: route + "/:id_or_code",
-    PathParam: {
+    pathParams: {
       required: ["id_or_code"],
       optional: [],
     },
@@ -45,7 +45,7 @@ const transfers = {
   verifyTransfer: {
     method: "get",
     route: route + "/verify/:reference",
-    PathParam: {
+    pathParams: {
       required: ["reference"],
       optional: [],
     },

@@ -4,7 +4,7 @@ const applePay = {
   registerDomain: {
     method: "post",
     route: route + "/domain",
-    BodyParam: {
+    bodyParams: {
       required: ["domainName"],
       optional: [],
     },
@@ -12,7 +12,7 @@ const applePay = {
   listDomains: {
     method: "get",
     route: route + "/domain",
-    BodyParam: {
+    bodyParams: {
       required: [],
       optional: [],
     },
@@ -20,7 +20,7 @@ const applePay = {
   unregisterDomain: {
     method: "delete",
     route: route + "/domain",
-    BodyParam: {
+    bodyParams: {
       required: ["domainName"],
       optional: [],
     },

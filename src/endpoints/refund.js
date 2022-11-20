@@ -4,7 +4,7 @@ const refund = {
   createRefund: {
     method: "post",
     route: route,
-    BodyParam: {
+    bodyParams: {
       required: ["transaction"],
       optional: ["amount", "currency", "customer_note", "customer_note"],
     },
@@ -12,7 +12,7 @@ const refund = {
   listRefunds: {
     method: "get",
     route: route,
-    QueryParam: {
+    queryParams: {
       required: ["reference", "currency"],
       optional: ["from", "to", "perPage", "page"],
     },
@@ -20,7 +20,7 @@ const refund = {
   fetchRefund: {
     method: "get",
     route: route + "/:reference",
-    PathParam: {
+    pathParams: {
       required: ["reference"],
       optional: [""],
     },

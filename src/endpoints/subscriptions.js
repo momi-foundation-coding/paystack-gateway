@@ -4,7 +4,7 @@ const subscriptions = {
   createSubscription: {
     method: "post",
     route: route,
-    BodyParam: {
+    bodyParams: {
       required: ["customer", "plan", "authorization"],
       optional: ["start_date"]
       
@@ -13,7 +13,7 @@ const subscriptions = {
   listSubscriptions:{
     method:"get",
     route:route,
-    QueryParam:{
+    queryParams:{
       required:["perPage","page"],
       optional:["customer","plan"]
     }
@@ -22,7 +22,7 @@ const subscriptions = {
   fetchSubscription:{
     method:"get",
     route:route + "/:id_or_code",
-    PathParam:{
+    pathParams:{
       required:["id_or_code"],
       optional:[]
     }
@@ -30,7 +30,7 @@ const subscriptions = {
   enableSubscription:{
     method:"post",
     route:route + "/enable",
-    BodyParam:{
+    bodyParams:{
       required:["code","token"],
       optional:[]
     }
@@ -38,7 +38,7 @@ const subscriptions = {
   disableSubscription:{
     method:"post",
     route:route + "/disable",
-    BodyParam:{
+    bodyParams:{
       required:["code","token"],
       optional:[]
     }
@@ -46,7 +46,7 @@ const subscriptions = {
   generateUpdateSubscriptionLink:{
     method:"get",
     route:route + "/:code/manage/link/",
-    PathParam:{
+    pathParams:{
       required:["code"],
       optional:[]
     }
@@ -54,7 +54,7 @@ const subscriptions = {
   sendUpdateSubscriptionLink:{
     method:"post",
     route:route + "/:code/manage/email/",
-    PathParam:{
+    pathParams:{
       required:["code"],
       optional:[]
     }
